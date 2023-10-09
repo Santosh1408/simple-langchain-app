@@ -2,10 +2,10 @@ import streamlit as st
 from langchain.chains import LLMChain
 from langchain.chat_models import ChatOpenAI
 from langchain.prompts import (
-    ChatPromptTemplate,
-    SystemMessagePromptTemplate,
-    HumanMessagePromptTemplate,
-)
+    ChatMessagePromptTemplate)
+'SystemMessagePromptTemplate,'
+'HumanMessagePromptTemplate,'
+
 
 
 st.set_page_config(page_title="LangChain: Simple chatbot", page_icon="🦜")
@@ -14,13 +14,13 @@ st.title("Chatbot")
 openai_api_key = st.sidebar.text_input("OpenAI API Key", type="password")
 
 
-llm_prompt = ChatPromptTemplate(
+llm_prompt = 'ChatPromptTemplate'(
     messages=[
-        SystemMessagePromptTemplate.from_template(
+        'SystemMessagePromptTemplate'.from_template(
             # This prompt tells the chatbot how to respond. Try modifying it.
-            "You are an AI assistant."
+            "You are an AI assistant//."
         ),
-        HumanMessagePromptTemplate.from_template("{message}")
+        'HumanMessagePromptTemplate'.from_template("{message}")
     ]
 )
 
